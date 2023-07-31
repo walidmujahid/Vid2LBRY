@@ -75,17 +75,17 @@ The command-line tool supports the following options:
 
 ## Future Plans
 
-- [] Video Metadata Customization: Enable users to customize the metadata of their uploaded videos on LBRY, including options to edit video titles, descriptions, and thumbnail images. This will enhance the discoverability and presentation of content.
+- [ ] Video Metadata Customization: Enable users to customize the metadata of their uploaded videos on LBRY, including options to edit video titles, descriptions, and thumbnail images. This will enhance the discoverability and presentation of content.
 
-- [] Batch Processing: Add support for batch processing, allowing users to upload multiple videos at once. This feature will be beneficial for content creators with a large collection of videos.
+- [ ] Batch Processing: Add support for batch processing, allowing users to upload multiple videos at once. This feature will be beneficial for content creators with a large collection of videos.
 
-- [] YouTube Channels: Ability to transfer entire youtube Channels to LBRY.
+- [ ] YouTube Channels: Ability to transfer entire youtube Channels to LBRY.
 
-- [] YouTube Playlists: Ability to transfer YouTube playlists to LBRY.
+- [ ] YouTube Playlists: Ability to transfer YouTube playlists to LBRY.
 
-- [] YouTube authentication
+- [ ] YouTube authentication
 
-- [] Batch Processing: Add support for batch processing, allowing users to upload multiple videos at once. This feature will be beneficial for content creators with a large collection of videos.
+- [ ] Batch Processing: Add support for batch processing, allowing users to upload multiple videos at once. This feature will be beneficial for content creators with a large collection of videos.
 
 - [] Multi-Platform Support: Extend support for other video platforms (e.g., Vimeo, Dailymotion) to enable users to upload videos from different sources to LBRY seamlessly. 
 
