@@ -87,7 +87,7 @@ The command-line tool supports the following options:
 
 - [ ] Batch Processing: Add support for batch processing, allowing users to upload multiple videos at once. This feature will be beneficial for content creators with a large collection of videos.
 
-- [] Multi-Platform Support: Extend support for other video platforms (e.g., Vimeo, Dailymotion) to enable users to upload videos from different sources to LBRY seamlessly. 
+- [ ] Multi-Platform Support: Extend support for other video platforms (e.g., Vimeo, Dailymotion) to enable users to upload videos from different sources to LBRY seamlessly. 
 
 ## Contributing
 
