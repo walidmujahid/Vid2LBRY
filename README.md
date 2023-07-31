@@ -1,6 +1,6 @@
 # Vid2LBRY - YouTube to LBRY Video Uploader
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Free Imam Jamil](https://i.imgur.com/x0LVzeZ.png)](https://www.imamjamilactionnetwork.org/)
+[![Free Imam Jamil](https://i.imgur.com/aFa3ca4.png)](https://www.imamjamilactionnetwork.org/)
 
 Vid2LBRY is a Python script that allows you to process YouTube videos and upload them to the LBRY network. It automates the process of downloading YouTube videos, converting them to MP4 format (if necessary), and uploading them to LBRY for decentralized video hosting.
 
