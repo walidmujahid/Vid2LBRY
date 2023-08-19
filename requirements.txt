@@ -1,5 +1,6 @@
-pytest==7.4.0
+pytest==7.3.1
 pytest-cov==4.1.0
+pytest-mock==3.11.1
 SQLAlchemy==2.0.19
 youtube-dl @ git+https://github.com/ytdl-org/ytdl-nightly.git@3fd102945b7e34fb35ffd5236f9cc1f068b7445a
 
