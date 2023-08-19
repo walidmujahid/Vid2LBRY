@@ -9,6 +9,7 @@ parent_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # Add the parent directory to the Python module search path
 sys.path.insert(0, parent_dir)
 
+import sqlalchemy
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 
@@ -112,11 +113,15 @@ def test_create_lbry_upload_record(db_session):
     assert lbry_upload.lbry_status == 0
     assert lbry_upload.lbry_url is None
 
-"""
 def test_update_lbry_upload_record(db_session):
-    # Test updating an LBRYUpload record in the database
+    # Setup: Create an initial LBRYUpload record
+    video_info = {
+        'video_source': 'youtube',
+        'id': 'PXTsVwd_j5A',
+    }
+    create_lbry_upload_record(db_session, video_info)
 
-    # Sample video information
+    # Test updating an LBRYUpload record in the database
     video_id = 'PXTsVwd_j5A'
     lbry_url = 'https://lbry.tv/@your_channel/PXTsVwd_j5A'
     lbry_status = 1
@@ -125,9 +130,29 @@ def test_update_lbry_upload_record(db_session):
     update_lbry_upload_record(db_session, video_id, lbry_url, lbry_status)
 
     # Check if the LBRYUpload record is updated
-    lbry_upload = db_session.query(LBRYUpload).filter(LBRYUpload.video_id == 'PXTsVwd_j5A').first()
-    assert lbry_upload is not None
-    assert lbry_upload.video_id == 'PXTsVwd_j5A'
-    assert lbry_upload.lbry_url == 'https://lbry.tv/@your_channel/PXTsVwd_j5A'
-    assert lbry_upload.lbry_status == 1
-"""
+    lbry_upload = db_session.query(LBRYUpload).filter(LBRYUpload.video_id == video_id).first()
+
+    # Assertions
+    assert lbry_upload is not None, "LBRYUpload record not found"
+    assert lbry_upload.video_id == video_id, f"Expected video_id {video_id}, but got {lbry_upload.video_id}"
+    assert lbry_upload.lbry_url == lbry_url, f"Expected lbry_url {lbry_url}, but got {lbry_upload.lbry_url}"
+    assert lbry_upload.lbry_status == lbry_status, f"Expected lbry_status {lbry_status}, but got {lbry_upload.lbry_status}"
+
+    # Additional Assertions
+    assert lbry_upload.video_source == 'youtube', f"Expected video_source 'youtube', but got {lbry_upload.video_source}"
+
+    # Teardown: Delete the LBRYUpload record
+    db_session.delete(lbry_upload)
+    db_session.commit()
+
+# Error Scenarios
+def test_update_nonexistent_lbry_upload_record(db_session):
+    # Try updating a non-existent LBRYUpload record
+    video_id = 'NON_EXISTENT_ID'
+    lbry_url = 'https://lbry.tv/@your_channel/NON_EXISTENT_ID'
+    lbry_status = 1
+
+    # Expect an exception to be raised
+    with pytest.raises(sqlalchemy.exc.NoResultFound):
+        update_lbry_upload_record(db_session, video_id, lbry_url, lbry_status)
+
